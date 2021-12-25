@@ -74,13 +74,6 @@ public class Lambda01 {
         enbuyukeleman(list);  //Optional[103]   ---> reduce metoduyla duzenleyip tek eleman cektik
 
 
-        System.out.println();
-        System.out.println("********");
-
-
-
-        System.out.println();
-        System.out.println("********");
 
 
 
