@@ -1,9 +1,6 @@
 package Lambda;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
@@ -18,6 +15,9 @@ public class Lambda02 {
         topla2(list);            //Optional[118]
         ciftcarp(list);          //Optional[-1152]
         ciftcarpexpression(list);// -1152  ,  1152  carpimdan sonuc olarak negatif ve pozitif sonuc bulduk
+        onbeskucuktek(list);
+        ciftkaresiralama(list);
+        tekkarebk(list);
 
 
     }
@@ -110,6 +110,30 @@ public class Lambda02 {
         Integer min2 = list.stream().reduce(Integer.MAX_VALUE, (x, y) -> x < y ? x : y);
 
     }
+      //List'teki 15'ten buyuk en kucuk ve tek sayiyi yazdiriniz
+      public static void onbeskucuktek(List<Integer> list) {
+        //  list.stream().filter(t->t%2==1).filter(t->t>15).reduce(Integer::min);
+
+          System.out.println(list.stream().filter(t->t%2==1 & t>15).reduce(Integer::min));
+
+}
+    //list'in cift  elemanlarinin kareleri ni buykten kucuge yazdiriniz
+      public static void ciftkaresiralama(List<Integer> list){
+      list.stream().filter(Lambda01::ciftBul).map(t->t*t).sorted().forEach(Lambda01::printEl);
+
+
+
+}
+
+     //list'in tek  elemanlarinin kareleri ni buykten kucuge  yazdiriniz
+      public static void tekkarebk(List<Integer> list) {
+        list.stream().filter(t->t%2!=0).map(t->t*t).sorted(Comparator.reverseOrder()).forEach(Lambda01::printEl);
+
+
+
+
+}
+
 
 
 }
